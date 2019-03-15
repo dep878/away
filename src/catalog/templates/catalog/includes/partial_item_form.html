@@ -1,0 +1,156 @@
+{% load widget_tweaks %}
+
+{{ form.non_field_errors }}
+{{ form.source.errors }}
+{{ form.source }}
+
+<div class="inline field">
+    <div class="ui toggle checkbox">
+        {{ form.publish }}
+        <label><b>{{ form.publish.label }}</b></label>
+    </div>
+</div>
+<div class="inline field">
+    <div class="ui toggle checkbox">
+        {{ form.sold }}
+        <label><b>{{ form.sold.label }}</b></label>
+    </div>
+</div>
+
+<div class="tree fields">
+    <div class="nine wide field">
+        <label>{{ form.title.label }}</label>
+        {{ form.title }}
+        <div class="ui error message">
+            <p>{{ form.title.errors }}</p>
+        </div>
+    </div>
+    <div class="six wide field">
+        <label>{{ form.category.label }}</label>
+        {{ form.category }}
+    </div>
+    <div class="one wide field">
+        <label>&nbsp;</label>
+        <a href="{% url 'category_add' %}" class="ui fluid bottom positive basic icon button"><i class="plus icon"></i></a>
+    </div>
+</div>
+
+<h4 class="ui dividing header">Размеры</h4>
+<div class="five fields">
+    <div class="field">
+        <label>{{ form.size_height.label }}</label>
+        {{ form.size_height }}
+    </div>
+    <div class="field">
+        <label>{{ form.size_width.label }}</label>
+        {{ form.size_width }}
+    </div>
+    <div class="field">
+        <label>{{ form.size_length.label }}</label>
+        {{ form.size_length }}
+    </div>
+    <div class="field">
+        <label>{{ form.size_diameter.label }}</label>
+        {{ form.size_diameter }}
+    </div>
+    <div class="field">
+        <label>{{ form.weight.label }}</label>
+        {{ form.weight }}
+    </div>
+</div>
+
+<h4 class="ui dividing header">Данные о товаре</h4>
+<div class="five fields">
+    <div class="field">
+        <label>{{ form.country_origin.label }}</label>
+        {{ form.country_origin }}
+    </div>
+    <div class="field">
+        <label>{{ form.material.label }}</label>
+        {{ form.material }}
+    </div>
+    <div class="field">
+        <label>{{ form.period.label }}</label>
+        {{ form.period }}
+    </div>
+    <div class="field">
+        <label>{{ form.style.label }}</label>
+        {{ form.style }}
+    </div>
+    <div class="field">
+        <label>{{ form.condition.label }}</label>
+        {{ form.condition }}
+    </div>
+</div>
+<div class="field">
+    <label>{{ form.description.label }}</label>
+    {{ form.description }}
+</div>
+
+<h4 class="ui dividing header">Данные о покупке</h4>
+<div class="five fields">
+    <div class="field {% if form.date_purchase.errors %} error {% endif %}">
+        <label>{{ form.date_purchase.label }}</label>
+        {{ form.date_purchase }}
+        {{ form.date_purchase.errors }}
+    </div>
+    <div class="field">
+        <label>{{ form.city_purchase.label }}</label>
+        {{ form.city_purchase }}
+    </div>
+    <div class="field">
+        <label>{{ form.price_purchase.label }}</label>
+        {{ form.price_purchase }}
+    </div>
+    <div class="field">
+        <label>{{ form.exchange_rate.label }}</label>
+        {{ form.exchange_rate }}
+    </div>
+    <div class="field">
+        <label>{{ form.additional_expenses.label }}</label>
+        {{ form.additional_expenses }}
+    </div>
+</div>
+
+<h4 class="ui dividing header">Данные о продаже</h4>
+<div class="four fields">
+    <div class="field">
+        <label>{{ form.price_selling.label }}</label>
+        {{ form.price_selling }}
+    </div>
+    <div class="field">
+        <label>{{ form.date_prepayment.label }}</label>
+        {{ form.date_prepayment }}
+    </div>
+    <div class="field">
+        <label>{{ form.sum_prepayment.label }}</label>
+        {{ form.sum_prepayment }}
+    </div>
+    <div class="field">
+        <label>{{ form.date_delivery.label }}</label>
+        {{ form.date_delivery }}
+    </div>
+</div>
+<div class="field">
+    <label>{{ form.client.label }}</label>
+    {{ form.client }}
+</div>
+
+
+
+
+
+
+<!-- {% for field in form %}
+<div class="submit-link-row">{{ field.label_tag }} <br> {{ field }}</div>
+{% if form.errors %}
+{% for error in field.errors %}
+<p class="error-message">
+    <strong>{{ error|escape }}</strong>
+</p>
+{% endfor %}
+{% endif %}
+{% if field.help_text %}
+<p class="help">{{ field.help_text|safe }}</p>
+{% endif %}
+{% endfor %} -->

@@ -1,0 +1,16 @@
+<form method="post" action="{% url 'item_create' %}" class="ui form error js-item-create-form">
+    {% csrf_token %}
+    <h4 class="ui dividing header">Карточка товара</h4>
+    <div class="scrolling content">
+        {% include 'catalog/includes/partial_item_form.html' %}
+    </div>
+    <div class="actions">
+        <button type="button" class="ui black deny button">
+            Отмена
+        </button>
+        <button type="submit" class="btn ui positive right labeled icon button">
+            Сохранить
+            <i class="checkmark icon"></i>
+        </button>
+    </div>
+</form>

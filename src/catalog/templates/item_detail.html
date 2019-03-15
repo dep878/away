@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Title: {{ item.title }}</h1>
+<!-- <a href="">{{ item.category }}</a></p> -->
+  <p><strong>Author:</strong>  {{ item.category }}<!-- author detail link not yet defined -->
+  <p><strong>Code:</strong>  {{ item.code }}
+  <p><strong>Summary:</strong> {{ item.date_purchase }}</p>
+  <p><strong>ISBN:</strong> {{ item.material }}</p> 
+  <p><strong>Language:</strong> {{ item.style }}</p>  
+  <!-- <p><strong>Genre:</strong> {% for genre in item.genre.all %} {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p> -->
+  {% endblock %}

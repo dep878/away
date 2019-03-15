@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="ui fluid card">
+    <div class="content">
+        <form method="POST" action="" class="ui form {% if form.fields.errors %}error{% endif %}">
+            {% csrf_token %}
+            <h2 class="ui dividing header">Карточка товара</h2>
+            {% include 'catalog/includes/partial_item_form.html' %}
+    </div>
+    <div class="extra content">
+        <a href="{% url 'item_list' %}" class="ui black deny right floated button">
+            Отмена
+        </a>
+        <button type="submit" class="ui positive right labeled icon right floated button">
+            Сохранить
+            <i class="checkmark icon"></i>
+        </button>
+    </div>
+    </form>
+</div>
+{% endblock %}

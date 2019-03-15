@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<table class="hover">
+    <thead>
+        <tr>
+            <th>Название товара</th>
+            <th>Артикул</th>
+            <th>Категория</th>
+            <th>Город покупки</th>
+            <th>Цена покупки €</th>
+            <th>Цена покупки ₽</th>
+            <th>Цена продажи ₽</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></td>
+            <td>{{ item.code }}</td>
+            <td>{{ item.category }}</td>
+            <td>{{ item.city_purchase }}</td>
+            <td>{{ item.price_purchase }}</td>
+            <td>{{ item.price_purchase_rub }}</td>
+            <td>{{ item.price_selling }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

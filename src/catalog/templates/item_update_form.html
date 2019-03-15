@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<form method="POST" action="" class="ui form error">
+    {% csrf_token %}
+    <h4 class="ui dividing header">Карточка товара</h4>
+    {% include 'catalog/includes/partial_item_form.html' %}
+    <a href="{% url 'item_list' %}" class="ui black deny right floated button">
+        Отмена
+    </a>
+    <button type="submit" class="ui positive right labeled icon right floated button">
+        Обновить
+        <i class="checkmark icon"></i>
+    </button>
+</form>
+{% endblock %}

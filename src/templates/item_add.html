@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<form enctype="multipart/form-data" action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="hollow button success">Сохранить</button>
+    <!-- <button type="button" class="hollow button alert js-upload-images">Залить фотку</button>
+
+    <input id="fileupload" type="file" name="file" multiple style="display: none;" data-url="{% url 'item-add' %}"
+        data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'> -->
+
+
+    <!-- <button type="submit">Отправить</button> -->
+
+
+</form>
+{% endblock %}
+
+{% block javascript %}
+<!-- JQUERY FILE UPLOAD SCRIPTS -->
+<!-- <script src="{% static 'js/jquery-file-upload/vendor/jquery.ui.widget.js' %}"></script>
+<script src="{% static 'js/jquery-file-upload/jquery.iframe-transport.js' %}"></script>
+<script src="{% static 'js/jquery-file-upload/jquery.fileupload.js' %}"></script> -->
+
+<!-- PHOTOS PAGE SCRIPTS -->
+<!-- <script src="{% static 'js/basic-upload.js' %}"></script> -->
+{% endblock %}

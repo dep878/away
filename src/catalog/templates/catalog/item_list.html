@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block js %}
+<script src="{% static 'js/item.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<h1>Товар</h1>
+
+<p>
+    <button type="button" class="ui positive basic button js-create-item" data-url="{% url 'item_create' %}">
+        <i class="plus icon"></i>
+        Добавить товар
+    </button>
+</p>
+
+<table class="ui celled table" id="item-table">
+    <thead>
+        <tr>
+            <th>Название товара</th>
+            <th>Артикул</th>
+            <th>Категория</th>
+            <th>Город покупки</th>
+            <th>Цена покупки €</th>
+            <th>Цена покупки ₽</th>
+            <th>Цена продажи ₽</th>
+        </tr>
+    </thead>
+    <tbody>
+        <form method="post">{% csrf_token %}
+            <div class="content">
+                <p>Are you sure you want to delete "{{ object }}" ?</p>
+            </div>
+            <div class="actions">
+                <div class="ui red basic cancel inverted button">
+                    <i class="remove icon"></i>
+                    No
+                </div>
+                <input type="submit" class="ui green ok inverted button">
+                <i class="checkmark icon"></i>
+                Yes
+                </input>
+            </div>
+        </form>
+    </tbody>
+</table>
+
+<div class="ui special modal" id="modal-item">
+    <i class="close icon"></i>
+    <div class="header">
+        Карточка товара
+    </div>
+    <div class="content">
+
+    </div>
+</div>
+{% endblock %}
+
+<!-- <div class="actions">
+        <div class="ui button">Cancel</div>
+        <div class="ui button">OK</div>
+      </div> -->
